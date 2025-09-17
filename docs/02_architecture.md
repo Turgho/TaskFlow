@@ -1,4 +1,10 @@
-# Estrutura do Projeto
+# 🏗 Arquitetura — TaskFlow
+
+O projeto segue **Clean Architecture**, dividida em camadas bem definidas.
+
+---
+
+## 📂 Estrutura de Pastas
 
 ```
 TaskFlow.sln
@@ -33,3 +39,23 @@ TaskFlow.sln
 └─ TaskFlow.Tests/                # Camada Testes
     └─ TodoServiceTests.cs
 ```
+
+---
+
+## 🧱 Camadas
+
+- **Domain** → Entidades, interfaces, regras de negócio.
+- **Application** → Casos de uso, DTOs, validações, mapeamentos.
+- **Infrastructure** → Persistência, repositórios, implementação de interfaces.
+- **API** → Controllers, endpoints REST.
+- **Tests** → Testes unitários e de integração.
+
+---
+
+## 🔄 Fluxo de Dados
+
+1. **Controller** recebe a requisição.
+2. **Application** processa o caso de uso.
+3. **Domain** aplica regras de negócio.
+4. **Infrastructure** persiste ou lê do banco.
+5. **Controller** retorna resposta para o cliente.
