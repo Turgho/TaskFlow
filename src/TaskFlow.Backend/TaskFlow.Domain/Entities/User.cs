@@ -5,7 +5,7 @@ namespace TaskFlow.Domain.Entities;
 public class User : BaseEntity
 {
     public required string Username { get; set; }
-    public required Email Email { get; init; }
+    public required Email Email { get; set; }
     public required PasswordHash PasswordHash { get; set; }
     
     public DateTime CreatedAt { get; init; } = DateTime.UtcNow;
