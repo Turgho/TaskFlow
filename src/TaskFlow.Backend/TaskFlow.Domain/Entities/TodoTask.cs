@@ -13,6 +13,6 @@ public class TodoTask : BaseEntity
     public TodoTaskStatus Status { get; set; } = TodoTaskStatus.Pending;
     
     public DateTime CreatedAt { get; init; } = DateTime.UtcNow;
-    public DateTime UpdatedAt { get; init; } = DateTime.UtcNow;
-    public DateTime? DoneAt { get; init; }
+    public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
+    public DateTime? DoneAt { get; set; }
 }
