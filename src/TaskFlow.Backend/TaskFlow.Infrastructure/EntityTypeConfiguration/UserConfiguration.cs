@@ -17,23 +17,25 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
             .IsRequired()
             .HasMaxLength(100);
 
-        // Email (Value Object) armazenado como string
-        builder.Property(u => u.Email)
-            .HasConversion(
-                email => email.Value,      // para banco
-                value => new Email(value)  // do banco para objeto
-            )
-            .IsRequired()
-            .HasMaxLength(255);
+        // Email como Owned Type
+        builder.OwnsOne(u => u.Email, e =>
+        {
+            e.Property(p => p.Value)
+                .HasColumnName("Email")
+                .IsRequired()
+                .HasMaxLength(255);
 
-        // PasswordHash (Value Object) armazenado como string
-        builder.Property(u => u.PasswordHash)
-            .HasConversion(
-                hash => hash.Value,
-                value => new PasswordHash(value)
-            )
-            .IsRequired()
-            .HasMaxLength(255);
+            e.HasIndex(p => p.Value).IsUnique();
+        });
+
+        // PasswordHash como Owned Type
+        builder.OwnsOne(u => u.PasswordHash, p =>
+        {
+            p.Property(x => x.Value)
+                .HasColumnName("PasswordHash")
+                .IsRequired()
+                .HasMaxLength(255);
+        });
 
         builder.Property(u => u.CreatedAt)
             .HasDefaultValueSql("CURRENT_TIMESTAMP")
@@ -45,8 +47,5 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
 
         builder.Property(u => u.LastLoginAt)
             .IsRequired(false);
-
-        // Índice único no Email
-        builder.HasIndex(u => u.Email).IsUnique();
     }
 }
