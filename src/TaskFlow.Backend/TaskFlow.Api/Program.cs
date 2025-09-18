@@ -1,7 +1,12 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using Microsoft.EntityFrameworkCore;
+using TaskFlow.Application.Interfaces.Services;
+using TaskFlow.Application.Mapping;
+using TaskFlow.Application.Services;
+using TaskFlow.Domain.Interfaces;
 using TaskFlow.Infrastructure.Data;
+using TaskFlow.Infrastructure.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,8 +28,17 @@ builder.Services.AddControllers()
         options.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;
     });
 
-// AutoMapper (caso queira usar DTOs)
-builder.Services.AddAutoMapper(typeof(Program));
+// Repositories
+builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+// Services
+builder.Services.AddScoped<IUserServices, UserServices>();
+builder.Services.AddScoped<ITodoTaskServices, TodoTaskServices>();
+
+// AutoMapper
+builder.Services.AddAutoMapper(typeof(UserMappingProfile).Assembly);
+builder.Services.AddAutoMapper(typeof(TodoTaskMappingProfile).Assembly);
 
 // Swagger / OpenAPI
 builder.Services.AddEndpointsApiExplorer();
