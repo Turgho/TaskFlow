@@ -30,6 +30,8 @@ public class TodoTaskServices(IUnitOfWork unitOfWork, IMapper mapper) : ITodoTas
     public async Task<TodoTaskResponseDto> CreateAsync(Guid userId, CreateTodoTaskDto dto)
     {
         var task = mapper.Map<TodoTask>(dto);
+        
+        task.UserId = userId;
 
         await unitOfWork.Repository<TodoTask>().AddAsync(task);
         await unitOfWork.CommitAsync();
