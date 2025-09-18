@@ -4,7 +4,7 @@ namespace TaskFlow.Domain.Entities;
 
 public class TodoTask : BaseEntity
 {
-    public Guid UserId { get; init; }
+    public Guid UserId { get; set; }
     public string Title { get; set; } = string.Empty;
     public string? Description { get; set; }
 
