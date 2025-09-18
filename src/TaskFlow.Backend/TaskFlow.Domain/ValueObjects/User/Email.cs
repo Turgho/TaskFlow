@@ -6,6 +6,9 @@ public class Email
 {
     public string Value { get; }
 
+    // Construtor privado para EF Core
+    private Email() { }
+    
     public Email(string email)
     {
         if (string.IsNullOrWhiteSpace(email))

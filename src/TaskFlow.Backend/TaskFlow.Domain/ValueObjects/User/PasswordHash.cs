@@ -4,6 +4,8 @@ public class PasswordHash
 {
     public string Value { get; }
 
+    private PasswordHash() {}
+    
     public PasswordHash(string hash)
     {
         if (string.IsNullOrWhiteSpace(hash))
