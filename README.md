@@ -1,11 +1,11 @@
 # ✅ TaskFlow — Gerenciador de Tarefas Minimalista
 
-[![Status](https://img.shields.io/badge/status-em%20desenvolvimento-orange)](https://github.com/seu-usuario/TaskFlow)
+[![Status](https://img.shields.io/badge/status-em%20desenvolvimento-orange)](https://github.com/Turgho/TaskFlow)
 [![Linguagem](https://img.shields.io/badge/Linguagem-C%23-blue)](https://docs.microsoft.com/dotnet/csharp/)
-[![Último commit](https://img.shields.io/github/last-commit/Turgho/TaskFlow)](https://github.com/seu-usuario/TaskFlow/commits/main)
+[![Último commit](https://img.shields.io/github/last-commit/Turgho/TaskFlow)](https://github.com/Turgho/TaskFlow/commits/main)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green)](./LICENSE)
-[![Issues](https://img.shields.io/github/issues/Turgho/TaskFlow)](https://github.com/seu-usuario/TaskFlow/issues)
-[![Pull Requests](https://img.shields.io/github/issues-pr/Turgho/TaskFlow)](https://github.com/seu-usuario/TaskFlow/pulls)
+[![Issues](https://img.shields.io/github/issues/Turgho/TaskFlow)](https://github.com/Turgho/TaskFlow/issues)
+[![Pull Requests](https://img.shields.io/github/issues-pr/Turgho/TaskFlow)](https://github.com/Turgho/TaskFlow/pulls)
 
 **TaskFlow** é uma API de lista de tarefas (ToDo List) construída em **.NET 8**, aplicando princípios de **Clean Architecture**, boas práticas de **DTOs**, **AutoMapper**, **FluentValidation** e persistência em **SQLite**.  
 Ideal para treinar fundamentos de APIs RESTful e boas práticas de arquitetura.
