@@ -2,7 +2,7 @@
 
 [![Status](https://img.shields.io/badge/status-em%20desenvolvimento-orange)](https://github.com/Turgho/TaskFlow)
 [![Linguagem](https://img.shields.io/badge/Linguagem-C%23-blue)](https://docs.microsoft.com/dotnet/csharp/)
-[![Último commit](https://img.shields.io/github/last-commit/Turgho/TaskFlow/dev)](https://github.com/Turgho/TaskFlow/commits/main)
+[![Último commit](https://img.shields.io/github/last-commit/Turgho/TaskFlow/dev)](https://github.com/Turgho/TaskFlow/commits/dev)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green)](./LICENSE)
 [![Issues](https://img.shields.io/github/issues/Turgho/TaskFlow/dev)](https://github.com/seu-usuario/TaskFlow/issues)
 [![Pull Requests](https://img.shields.io/github/issues-pr/Turgho/TaskFlow/dev)](https://github.com/Turgho/TaskFlow/pulls)
